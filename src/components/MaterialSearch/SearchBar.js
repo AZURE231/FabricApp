@@ -31,26 +31,24 @@ function SearchBar() {
             <div>
                 <h1>Search Material</h1>
             </div>
-            <div className="catagory">
-                <form className="example" action="action_page.php">
-                    <input
-                        type="text"
-                        placeholder="Search material"
-                        name="search"
-                        onChange={filterBySearch}
-                    />
-                    <button type="submit">
-                        <BsIcons.BsSearch />
-                    </button>
-                    <div className="category">
-                        <ul>
-                            {filteredList.map((item, index) => (
-                                <li key={index}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                </form>
-            </div>
+            <form className="example" action="action_page.php">
+                <input
+                    type="text"
+                    placeholder="Search material"
+                    name="search"
+                    onChange={filterBySearch}
+                />
+                <button type="submit">
+                    <BsIcons.BsSearch />
+                </button>
+                <div className="category">
+                    <ul>
+                        {filteredList.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            </form>
         </div>
     );
 }
