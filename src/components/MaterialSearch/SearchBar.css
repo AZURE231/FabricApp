@@ -3,23 +3,22 @@
 }
 
 /* Style the search field */
-form.example input[type="text"] {
+.example input[type="text"] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
-    float: left;
+    float: center;
     width: 80%;
     background: #f1f1f1;
     height: 50px;
     width: 500px;
-    position: absolute;
-    top: 355px;
-    left: 575px;
+    justify-content: center;
     border-radius: 25px;
+    margin: auto;
 }
 
 /* Style the submit button */
-form.example button {
+.example button {
     float: left;
     width: 20%;
     padding: 10px;
@@ -31,19 +30,37 @@ form.example button {
     cursor: pointer;
     height: 50px;
     width: 50px;
-    position: absolute;
-    top: 355px;
-    left: 1075px;
+    justify-content: center;
     border-radius: 25px;
 }
 
-form.example button:hover {
+.example button:hover {
     background: #0b7dda;
 }
 
 /* Clear floats */
-form.example::after {
+.example::after {
     content: "";
     clear: both;
     display: table;
+}
+
+.category {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.category li {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
 }

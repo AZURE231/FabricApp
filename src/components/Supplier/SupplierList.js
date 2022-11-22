@@ -6,8 +6,6 @@ import CateDetail from "./CateDetail";
 import SupplierForm from "./SupplierForm";
 
 function SupplierList() {
-    const [detailBox, setDetailBox] = useState(false);
-    const showDetailBox = () => setDetailBox(!detailBox);
     const [contacts, setContacts] = useState(supplierData);
 
     return (
