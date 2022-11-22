@@ -10,6 +10,12 @@ form.example input[type="text"] {
     float: left;
     width: 80%;
     background: #f1f1f1;
+    height: 50px;
+    width: 500px;
+    position: absolute;
+    top: 355px;
+    left: 575px;
+    border-radius: 25px;
 }
 
 /* Style the submit button */
@@ -17,12 +23,18 @@ form.example button {
     float: left;
     width: 20%;
     padding: 10px;
-    background: #2196f3;
+    background: rgba(255, 255, 255, 0.3);
     color: white;
     font-size: 17px;
     border: 1px solid grey;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 355px;
+    left: 1075px;
+    border-radius: 25px;
 }
 
 form.example button:hover {

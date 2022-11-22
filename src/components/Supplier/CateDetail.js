@@ -1,20 +1,33 @@
 import React, { useState } from "react";
 import * as BiIcons from "react-icons/bi";
-import { Link } from "react-router-dom";
 import "./CateDetail.css";
+import CateList from "./CateList";
 
+// Render the popup box
 function CateDetail() {
     const [detailBox, setDetailBox] = useState(false);
     const showDetailBox = () => setDetailBox(!detailBox);
 
+    if (detailBox) {
+        document.body.classList.add("active-modal");
+    } else {
+        document.body.classList.remove("active-modal");
+    }
+
     return (
         <div>
             <div>
-                <Link to="/supplier/detailCate" className="menu-bars">
-                    <BiIcons.BiDetail onClick={showDetailBox} />
-                </Link>
+                <BiIcons.BiDetail onClick={showDetailBox} />
             </div>
-            {detailBox}
+            {detailBox && (
+                <div className="modal">
+                    <div onClick={showDetailBox} className="overlay"></div>
+                    <div className="modal-content">
+                        <h2>Detail information</h2>
+                        <CateList />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

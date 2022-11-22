@@ -15,7 +15,7 @@ export const SidebarData = [
         cName: "nav-text",
     },
     {
-        title: "SearchMaterial",
+        title: "Search material",
         path: "/searchMaterial",
         icon: <AiIcons.AiOutlineFileSearch />,
         cName: "nav-text",
