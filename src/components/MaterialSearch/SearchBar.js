@@ -32,7 +32,7 @@ function SearchBar() {
                 <h1>Search Material</h1>
             </div>
             <div className="catagory">
-                <form class="example" action="action_page.php">
+                <form className="example" action="action_page.php">
                     <input
                         type="text"
                         placeholder="Search material"
@@ -42,7 +42,7 @@ function SearchBar() {
                     <button type="submit">
                         <BsIcons.BsSearch />
                     </button>
-                    <div id="item-list" className="category">
+                    <div className="category">
                         <ul>
                             {filteredList.map((item, index) => (
                                 <li key={index}>{item}</li>
