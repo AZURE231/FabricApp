@@ -15,15 +15,15 @@ export const SidebarData = [
         cName: "nav-text",
     },
     {
-        title: "Logout",
-        path: "/",
-        icon: <AiIcons.AiOutlineLogout />,
-        cName: "nav-text",
-    },
-    {
         title: "SearchMaterial",
         path: "/searchMaterial",
         icon: <AiIcons.AiOutlineFileSearch />,
+        cName: "nav-text",
+    },
+    {
+        title: "Logout",
+        path: "/",
+        icon: <AiIcons.AiOutlineLogout />,
         cName: "nav-text",
     },
 ];
