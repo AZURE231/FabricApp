@@ -27,13 +27,13 @@ function SupplierList() {
                 <table>
                     <tbody>
                         {contacts.map((contact) => (
-                            <tr>
+                            <tr key={contact.nameSup}>
                                 <td>{contact.nameSup}</td>
                                 <td>{contact.addressSup}</td>
                                 <td>{contact.bankAccount}</td>
                                 <td>{contact.taxCode}</td>
                                 <td>
-                                    <CateDetail />
+                                    <CateDetail supplierID={contact.nameSup} />
                                 </td>
                             </tr>
                         ))}

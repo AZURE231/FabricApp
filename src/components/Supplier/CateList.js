@@ -3,7 +3,7 @@ import cateData from "./CateData.json";
 import "./SupplierList.css";
 
 // Render details of all categories which are provided by a supplier
-function CateList() {
+function CateList(props) {
     const [dataCate, setDataCate] = useState(cateData);
     return (
         <div>
@@ -24,7 +24,7 @@ function CateList() {
                     <tbody>
                         {dataCate.map((data) => (
                             <tr>
-                                <td>{data.nameSup}</td>
+                                <td>{props.supplierID}</td>
                                 <td>{data.category}</td>
                                 <td>{data.dateBuy}</td>
                                 <td>{data.priceBuy}</td>

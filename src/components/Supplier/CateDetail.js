@@ -4,7 +4,7 @@ import "./CateDetail.css";
 import CateList from "./CateList";
 
 // Render the popup box
-function CateDetail() {
+function CateDetail(props) {
     const [detailBox, setDetailBox] = useState(false);
     const showDetailBox = () => setDetailBox(!detailBox);
 
@@ -24,7 +24,7 @@ function CateDetail() {
                     <div onClick={showDetailBox} className="overlay"></div>
                     <div className="modal-content">
                         <h2>Detail information</h2>
-                        <CateList />
+                        <CateList supplierID={props.supplierID} />
                     </div>
                 </div>
             )}
