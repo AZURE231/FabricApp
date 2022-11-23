@@ -41,14 +41,14 @@ function SearchBar() {
                 <button type="submit">
                     <BsIcons.BsSearch />
                 </button>
-                <div className="category">
-                    <ul>
-                        {filteredList.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
             </form>
+            <div className="category">
+                <ul>
+                    {filteredList.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }
