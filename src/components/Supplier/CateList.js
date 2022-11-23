@@ -23,7 +23,7 @@ function CateList(props) {
                 <table>
                     <tbody>
                         {dataCate.map((data) => (
-                            <tr>
+                            <tr key={props.supplierID}>
                                 <td>{props.supplierID}</td>
                                 <td>{data.category}</td>
                                 <td>{data.dateBuy}</td>

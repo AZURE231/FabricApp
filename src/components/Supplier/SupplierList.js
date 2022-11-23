@@ -7,6 +7,7 @@ import SupplierForm from "./SupplierForm";
 
 function SupplierList() {
     const [contacts, setContacts] = useState(supplierData);
+    const [chooseSupplier, setChooseSupplier] = useState(false);
 
     return (
         <section>
@@ -18,7 +19,7 @@ function SupplierList() {
                             <th>Address</th>
                             <th>Bank account</th>
                             <th>Tax code</th>
-                            <th>Action</th>
+                            <th></th>
                         </tr>
                     </thead>
                 </table>
@@ -27,11 +28,17 @@ function SupplierList() {
                 <table>
                     <tbody>
                         {contacts.map((contact) => (
-                            <tr key={contact.nameSup}>
+                            <tr
+                                key={contact.nameSup}
+                                onClick={setChooseSupplier}
+                            >
                                 <td>{contact.nameSup}</td>
                                 <td>{contact.addressSup}</td>
                                 <td>{contact.bankAccount}</td>
                                 <td>{contact.taxCode}</td>
+                                {/*chooseSupplier && (
+                                    <CateDetail supplierID={contact.nameSup} />
+                                )*/}
                                 <td>
                                     <CateDetail supplierID={contact.nameSup} />
                                 </td>
