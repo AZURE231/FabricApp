@@ -7,6 +7,7 @@ import Supplier from "./pages/Supplier";
 import Home from "./pages/Home";
 import DetailCate from "./pages/DetailCate";
 import SearchMaterial from "./pages/SearchMaterial";
+import OrderReport from "./pages/OrderReport";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                         path="/searchMaterial"
                         element={<SearchMaterial />}
                     />
+                    <Route path="/orderReport" element={<OrderReport />} />
                 </Routes>
             </BrowserRouter>
         </React.StrictMode>

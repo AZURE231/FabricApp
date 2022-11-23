@@ -1,5 +1,6 @@
 import * as AiIcons from "react-icons/ai";
 import * as BsIcons from "react-icons/bs";
+import * as TbIcons from "react-icons/tb";
 
 export const SidebarData = [
     {
@@ -18,6 +19,12 @@ export const SidebarData = [
         title: "Search material",
         path: "/searchMaterial",
         icon: <AiIcons.AiOutlineFileSearch />,
+        cName: "nav-text",
+    },
+    {
+        title: "Order Report",
+        path: "/orderReport",
+        icon: <TbIcons.TbReportMoney />,
         cName: "nav-text",
     },
     {
