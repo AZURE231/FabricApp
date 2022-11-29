@@ -24,7 +24,7 @@ function CateDetail(props) {
                     <div onClick={showDetailBox} className="overlay"></div>
                     <div className="modal-content">
                         <h2>Detail information</h2>
-                        <CateList supplierID={props.supplier_id} />
+                        <CateList supplierID={props.supplierID} />
                     </div>
                 </div>
             )}

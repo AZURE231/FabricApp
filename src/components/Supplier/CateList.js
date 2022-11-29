@@ -8,14 +8,14 @@ import axios from "axios";
 //     const [dataCate, setDataCate] = useState(cateData);
 const CateList = (props) => {
     const [catemodel, setCatemodel] = useState([]);
-   
+
     useEffect(() => {
-      getCatemodels();
+        getCatemodels();
     }, []);
-   
+
     const getCatemodels = async () => {
-      const response = await axios.get("http://localhost:5000/Catemodel");
-      setCatemodel(response.data);
+        const response = await axios.get("http://localhost:5000/Catemodel");
+        setCatemodel(response.data);
     };
     return (
         <div>
@@ -37,19 +37,21 @@ const CateList = (props) => {
             <div className="tbl-content">
                 <table>
                     <tbody>
-                        {catemodel.filter((sup)=>{
-                            return catemodel.supplier_id = props.supplierID
-                        }).map((catemodel) => (
-                            <tr key={props.supplierID}>
-                                <td>{catemodel.supplier_id}</td>
-                                <td>{catemodel.id}</td>
-                                <td>{catemodel.totalpayment}</td>
-                                <td>{catemodel.color}</td>
-                                <td>{catemodel.date}</td>
-                                <td>{catemodel.selling_price}</td>
-                                <td>{catemodel.quantity}</td>
-                            </tr>
-                        ))}
+                        {catemodel
+                            .filter((sup) => {
+                                return (sup.supplier_id = props.supplierID);
+                            })
+                            .map((catemodel) => (
+                                <tr key={catemodel.supplier_id}>
+                                    <td>{catemodel.supplier_id}</td>
+                                    <td>{catemodel.id}</td>
+                                    <td>{catemodel.totalpayment}</td>
+                                    <td>{catemodel.color}</td>
+                                    <td>{catemodel.date}</td>
+                                    <td>{catemodel.selling_price}</td>
+                                    <td>{catemodel.quantity}</td>
+                                </tr>
+                            ))}
                         {/*catemodel.map((catemodel) => (
                             <tr key={props.supplier_id}>
                                 <td>{catemodel.supplier_id}</td>
@@ -66,5 +68,5 @@ const CateList = (props) => {
             </div>
         </div>
     );
-}
+};
 export default CateList;
