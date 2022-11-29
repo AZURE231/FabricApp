@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import "./SupplierList.css";
-import supplierData from "./SupplierData.json";
+import "./CateDetail.js";
+//import supplierData from "./SupplierData.json";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-import CateDetail from "./CateDetail";
+//import CateDetail from "./CateDetail";
 import SupplierForm from "./SupplierForm";
 
-function SupplierList() {
-    const [contacts, setContacts] = useState(supplierData);
+// function SupplierList() {
+//     const [contacts, setContacts] = useState(supplierData);
+const SupplierList = () => {
+    const [supplier, setSupplier] = useState([]);
+   
+    useEffect(() => {
+      getSuppliers();
+    }, []);
+   
+    const getSuppliers = async () => {
+      const response = await axios.get("http://localhost:5000/Supplier");
+      setSupplier(response.data);
+    };
     const [chooseSupplier, setChooseSupplier] = useState(false);
 
     return (
@@ -20,6 +34,7 @@ function SupplierList() {
                             <th>Bank account</th>
                             <th>Tax code</th>
                             <th></th>
+                            
                         </tr>
                     </thead>
                 </table>
@@ -27,21 +42,21 @@ function SupplierList() {
             <div className="tbl-content">
                 <table>
                     <tbody>
-                        {contacts.map((contact) => (
+                        {supplier.map((supplier) => (
                             <tr
-                                key={contact.nameSup}
+                                key={supplier.name}
                                 onClick={setChooseSupplier}
                             >
-                                <td>{contact.nameSup}</td>
-                                <td>{contact.addressSup}</td>
-                                <td>{contact.bankAccount}</td>
-                                <td>{contact.taxCode}</td>
+                                <td>{supplier.name}</td>
+                                <td>{supplier.address}</td>
+                                <td>{supplier.bank_account}</td>
+                                <td>{supplier.tax_code}</td>
                                 {/*chooseSupplier && (
                                     <CateDetail supplierID={contact.nameSup} />
                                 )*/}
-                                <td>
-                                    <CateDetail supplierID={contact.nameSup} />
-                                </td>
+                                {/* <td>
+                                    <CateDetail supplierID={supplier.name} />
+                                </td> */}
                             </tr>
                         ))}
                     </tbody>
