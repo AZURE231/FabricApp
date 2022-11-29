@@ -21,7 +21,7 @@ const AddSupplier = () => {
           bank_account,
           tax_code
         });
-        navigate("/");
+        //navigate("/");
       } catch (error) {
         console.log(error);
       }

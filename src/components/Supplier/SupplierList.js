@@ -5,7 +5,7 @@ import "./CateDetail.js";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-//import CateDetail from "./CateDetail";
+import CateDetail from "./CateDetail";
 import SupplierForm from "./SupplierForm";
 
 // function SupplierList() {
@@ -33,7 +33,7 @@ const SupplierList = () => {
                             <th>Address</th>
                             <th>Bank account</th>
                             <th>Tax code</th>
-                            <th></th>
+                            <th>Category info</th>
                             
                         </tr>
                     </thead>
@@ -54,9 +54,9 @@ const SupplierList = () => {
                                 {/*chooseSupplier && (
                                     <CateDetail supplierID={contact.nameSup} />
                                 )*/}
-                                {/* <td>
-                                    <CateDetail supplierID={supplier.name} />
-                                </td> */}
+                                <td>
+                                    <CateDetail supplierID={supplier.id} />
+                                </td>
                             </tr>
                         ))}
                     </tbody>

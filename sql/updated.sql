@@ -24,6 +24,7 @@ drop table if exists `office_staff`;
 drop table if exists `partner_staff`;
 drop table if exists `employee`;
 drop table if exists `paymentsup`;
+drop table if exists `supplierfull`;
 
 -- Employee 
 create table `employee` (
@@ -422,7 +423,7 @@ values
     ('blt0000004', '1', '000000', 12000, 'ord0000001');
 
 create table paymentsup
-select ttable.category_id,ttable.supplier_id,ttable.totalpayment
+select ttable.category_id as id,ttable.supplier_id,ttable.totalpayment
 from (
 select category.supplier_id, supplement.category_id, sum(supplement.purchase_price) as totalpayment
 from category
@@ -432,3 +433,7 @@ join supplement on category.id = supplement.category_id group by supplement.cate
 alter table paymentsup 
 add   `createdAt` datetime NOT NULL,
 add  `updatedAt` datetime NOT NULL;
+
+create table supplierfull
+select category_prices.category_id as id, paymentsup.createdAt, paymentsup.supplier_id, paymentsup.totalpayment, category_prices.color, category_prices.date as updatedAt, category_prices.selling_price, category_prices.quantity
+from paymentsup join category_prices on paymentsup.id = category_prices.category_id
