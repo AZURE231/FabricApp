@@ -39,7 +39,10 @@ const CateList = (props) => {
                     <tbody>
                         {catemodel
                             .filter((sup) => {
-                                return (sup.supplier_id = props.supplierID);
+                                console.log(
+                                    sup.supplier_id + " " + props.supplierID
+                                )
+                                return (sup.supplier_id == props.supplierID);
                             })
                             .map((catemodel) => (
                                 <tr key={catemodel.supplier_id}>
@@ -47,7 +50,7 @@ const CateList = (props) => {
                                     <td>{catemodel.id}</td>
                                     <td>{catemodel.totalpayment}</td>
                                     <td>{catemodel.color}</td>
-                                    <td>{catemodel.date}</td>
+                                    <td>{catemodel.updatedAt}</td>
                                     <td>{catemodel.selling_price}</td>
                                     <td>{catemodel.quantity}</td>
                                 </tr>
