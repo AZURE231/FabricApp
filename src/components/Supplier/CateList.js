@@ -1,20 +1,35 @@
-import React, { useState } from "react";
-import cateData from "./CateData.json";
-import "./SupplierList.css";
+import React, { useState, useEffect } from "react";
+//import cateData from "./CateData.json";
+import "./CateDetail.css";
+import axios from "axios";
 
 // Render details of all categories which are provided by a supplier
-function CateList(props) {
-    const [dataCate, setDataCate] = useState(cateData);
+// function CateList(props) {
+//     const [dataCate, setDataCate] = useState(cateData);
+const CateList = (props) => {
+    const [catemodel, setCatemodel] = useState([]);
+
+    useEffect(() => {
+        getCatemodels();
+    }, []);
+
+    const getCatemodels = async () => {
+        const response = await axios.get("http://localhost:5000/Catemodel");
+        setCatemodel(response.data);
+    };
     return (
         <div>
             <div className="tbl-header">
                 <table cellPadding="0" cellSpacing="0" border="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Category</th>
+                            <th>Supplier ID</th>
+                            <th>Category ID</th>
+                            <th>Total payment</th>
+                            <th>Color</th>
                             <th>Date</th>
-                            <th>Time</th>
+                            <th>Selling price</th>
+                            <th>Quantity</th>
                         </tr>
                     </thead>
                 </table>
@@ -22,19 +37,39 @@ function CateList(props) {
             <div className="tbl-content">
                 <table>
                     <tbody>
-                        {dataCate.map((data) => (
-                            <tr key={props.supplierID}>
-                                <td>{props.supplierID}</td>
-                                <td>{data.category}</td>
-                                <td>{data.dateBuy}</td>
-                                <td>{data.priceBuy}</td>
+                        {catemodel
+                            .filter((sup) => {
+                                console.log(
+                                    sup.supplier_id + " " + props.supplierID
+                                )
+                                return (sup.supplier_id == props.supplierID);
+                            })
+                            .map((catemodel) => (
+                                <tr key={catemodel.supplier_id}>
+                                    <td>{catemodel.supplier_id}</td>
+                                    <td>{catemodel.id}</td>
+                                    <td>{catemodel.totalpayment}</td>
+                                    <td>{catemodel.color}</td>
+                                    <td>{catemodel.updatedAt}</td>
+                                    <td>{catemodel.selling_price}</td>
+                                    <td>{catemodel.quantity}</td>
+                                </tr>
+                            ))}
+                        {/*catemodel.map((catemodel) => (
+                            <tr key={props.supplier_id}>
+                                <td>{catemodel.supplier_id}</td>
+                                <td>{catemodel.id}</td>
+                                <td>{catemodel.totalpayment}</td>
+                                <td>{catemodel.color}</td>
+                                <td>{catemodel.date}</td>
+                                <td>{catemodel.selling_price}</td>
+                                <td>{catemodel.quantity}</td>
                             </tr>
-                        ))}
+                        ))*/}
                     </tbody>
                 </table>
             </div>
         </div>
     );
-}
-
+};
 export default CateList;
