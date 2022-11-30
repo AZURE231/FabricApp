@@ -54,7 +54,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="box">
+                    {/*<div className="box">
                         <div className="imgBx">
                             <img src={require("../components/imgs/fab4.jpg")} />
                         </div>
@@ -69,6 +69,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
+    */}
                 </div>
             </div>
         </div>

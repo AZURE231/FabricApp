@@ -1,12 +1,5 @@
 .container {
-    position: relative;
-    width: 1160px;
-    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    transform-style: preserve-3d;
-    perspective: 500px;
-    margin: auto;
 }
 .container .box {
     position: relative;
