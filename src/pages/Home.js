@@ -1,13 +1,78 @@
 import React from "react";
 import Navbar from "../components/Navigation/Navbar";
+import "./Home.css";
 
-function supplier() {
+function Home() {
     return (
         <div>
             <Navbar />
-            <div className="home">Home</div>
+            <div>
+                <h1>Home</h1>
+                <div className="container">
+                    <div className="box">
+                        <div className="imgBx">
+                            <img src={require("../components/imgs/fab1.jpg")} />
+                        </div>
+                        <div className="content">
+                            <div>
+                                <h2>Image Title</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Commodi accusamus
+                                    molestias quidem iusto.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="box">
+                        <div className="imgBx">
+                            <img src={require("../components/imgs/fab2.jpg")} />
+                        </div>
+                        <div className="content">
+                            <div>
+                                <h2>Image Title</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Commodi accusamus
+                                    molestias quidem iusto.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="box">
+                        <div className="imgBx">
+                            <img src={require("../components/imgs/fab5.jpg")} />
+                        </div>
+                        <div className="content">
+                            <div>
+                                <h2>Image Title</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Commodi accusamus
+                                    molestias quidem iusto.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="box">
+                        <div className="imgBx">
+                            <img src={require("../components/imgs/fab4.jpg")} />
+                        </div>
+                        <div className="content">
+                            <div>
+                                <h2>Image Title</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Commodi accusamus
+                                    molestias quidem iusto.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
 
-export default supplier;
+export default Home;
