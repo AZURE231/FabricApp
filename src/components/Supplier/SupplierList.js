@@ -1,4 +1,4 @@
-import React, { useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./SupplierList.css";
 import "./CateDetail.js";
 //import supplierData from "./SupplierData.json";
@@ -12,14 +12,14 @@ import SupplierForm from "./SupplierForm";
 //     const [contacts, setContacts] = useState(supplierData);
 const SupplierList = () => {
     const [supplier, setSupplier] = useState([]);
-   
+
     useEffect(() => {
-      getSuppliers();
+        getSuppliers();
     }, []);
-   
+
     const getSuppliers = async () => {
-      const response = await axios.get("http://localhost:5000/Supplier");
-      setSupplier(response.data);
+        const response = await axios.get("http://localhost:5000/Supplier");
+        setSupplier(response.data);
     };
     const [chooseSupplier, setChooseSupplier] = useState(false);
 
@@ -34,7 +34,6 @@ const SupplierList = () => {
                             <th>Bank account</th>
                             <th>Tax code</th>
                             <th>Category info</th>
-                            
                         </tr>
                     </thead>
                 </table>
@@ -43,10 +42,7 @@ const SupplierList = () => {
                 <table>
                     <tbody>
                         {supplier.map((supplier) => (
-                            <tr
-                                key={supplier.name}
-                                onClick={setChooseSupplier}
-                            >
+                            <tr key={supplier.name} onClick={setChooseSupplier}>
                                 <td>{supplier.name}</td>
                                 <td>{supplier.address}</td>
                                 <td>{supplier.bank_account}</td>
@@ -65,6 +61,6 @@ const SupplierList = () => {
             <SupplierForm />
         </section>
     );
-}
+};
 
 export default SupplierList;
