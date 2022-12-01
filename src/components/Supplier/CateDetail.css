@@ -9,7 +9,7 @@ body.active-modal {
     font-size: 18px;
 }
 
-.modal,
+.modal, 
 .overlay {
     width: 100vw;
     height: 100vh;

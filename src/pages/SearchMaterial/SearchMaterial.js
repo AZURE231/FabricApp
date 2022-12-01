@@ -11,7 +11,7 @@ function OrderReport() {
 
     useEffect(() => {
         let body = selectedMaterial;
-        axios.post("http://localhost:5000/getMaterialInfo", body).then(response => {setmaterialInfos(response.data)});
+        axios.post("http://localhost:4000/getMaterialInfo", body).then(response => {setmaterialInfos(response.data)});
       }, [selectedMaterial])
 
     const renderTable = () => {

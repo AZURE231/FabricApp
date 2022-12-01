@@ -22,9 +22,11 @@ function CateDetail(props) {
             <div>
                 <BiIcons.BiDetail onClick={showDetailBox} />
             </div>
+            {detailBox && console.log(detailBox)
+            }
             {detailBox && (
-                <div className="modal">
-                    <div onClick={showDetailBox} className="overlay"></div>
+                //<div className="modal">
+                    <div onClick={showDetailBox} className="overlay">
                     <div className="modal-content">
                         <h2>Detail information</h2>
                         <CateList supplierID={props.supplierID} />
