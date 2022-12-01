@@ -6,7 +6,10 @@ import CateList from "./CateList";
 // Render the popup box
 function CateDetail(props) {
     const [detailBox, setDetailBox] = useState(false);
-    const showDetailBox = () => setDetailBox(!detailBox);
+    const showDetailBox = () => {
+         console.log("button clicked");
+        setDetailBox(!detailBox);
+    }
 
     if (detailBox) {
         document.body.classList.add("active-modal");

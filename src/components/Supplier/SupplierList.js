@@ -11,7 +11,7 @@ import SupplierForm from "./SupplierForm";
 // function SupplierList() {
 //     const [contacts, setContacts] = useState(supplierData);
 const SupplierList = () => {
-    const [supplier, setSupplier] = useState([]);
+    const [supplier, setSupplier] = useState([]); 
 
     useEffect(() => {
         getSuppliers();

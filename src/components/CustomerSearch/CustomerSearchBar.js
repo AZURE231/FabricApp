@@ -10,7 +10,7 @@ const CustomerSearchBar = ({ setSelectedCustomer }) => {
 
     useEffect(() => {
         axios
-            .post("http://localhost:5000/getCustomerNames")
+            .post("http://localhost:4000/getCustomerNames")
             .then((response) => setcustomerNames(response.data));
     }, []);
 

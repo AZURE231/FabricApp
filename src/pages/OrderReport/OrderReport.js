@@ -9,7 +9,7 @@ function OrderReport() {
 
     useEffect(() => {
         let body = selectedCustomer[0];
-        axios.post("http://localhost:5000/getCustomerOrders", body).then(response => {setCustomerOrders(response.data)});
+        axios.post("http://localhost:4000/getCustomerOrders", body).then(response => {setCustomerOrders(response.data)});
       }, [selectedCustomer])
 
     const renderOrdersTable = () => {

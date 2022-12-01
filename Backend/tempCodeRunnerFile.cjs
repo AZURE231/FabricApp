@@ -2,15 +2,15 @@ const express = require('express')
 var cors = require('cors')
 const app = express()
 var mysql = require('mysql');
-const port = 5000;
+const port = 4000;
 
 app.use(express.json(), cors())
 
 var con = mysql.createConnection({
-    host: "bhrmhkdj50mn30jmbwcr-mysql.services.clever-cloud.com",
-    user: "uki1mqfkopnus4w7",
-    password: "702eic9ofUokluyYgmKm",
-    database: "bhrmhkdj50mn30jmbwcr"
+    host: "localhost",
+    user: "root",
+    password: "191001",
+    database: "fabric"
   });
 
 con.connect(function(err) {
