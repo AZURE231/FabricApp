@@ -6,7 +6,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Supplier from "./pages/Supplier";
 import Home from "./pages/Home";
 import DetailCate from "./pages/DetailCate";
-import SearchMaterial from "./pages/SearchMaterial";
+import SearchMaterial from "./pages/SearchMaterial/SearchMaterial";
 import OrderReport from "./pages/OrderReport/OrderReport";
 
 function App() {

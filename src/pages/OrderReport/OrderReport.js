@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navigation/Navbar";
-import TypeaheadExample from "../../components/CustomerSearch/CustomerSearchBar";
-
-import customerOrders from './CustomerOrders';
+import CustomerSearchBar from "../../components/CustomerSearch/CustomerSearchBar";
+import axios from "axios";
 
 function OrderReport() {
+    const [customerOrders, setCustomerOrders] = useState([]);
+    const [selectedCustomer, setSelectedCustomer] = useState([]);
+
+    useEffect(() => {
+        let body = selectedCustomer[0];
+        axios.post("http://localhost:5000/getCustomerOrders", body).then(response => {setCustomerOrders(response.data)});
+      }, [selectedCustomer])
+
     const renderOrdersTable = () => {
         return (
             <table className="table table-hover table-bordered mt-5">
@@ -43,8 +50,8 @@ function OrderReport() {
                     margin: '0 auto'
                 }}
             >
-                <TypeaheadExample/>
-                {renderOrdersTable()}
+                <CustomerSearchBar setSelectedCustomer = {setSelectedCustomer}/>
+                {selectedCustomer && renderOrdersTable()}
             </div>
             
         </div>
