@@ -25,11 +25,13 @@ function CateDetail(props) {
             {detailBox && console.log(detailBox)
             }
             {detailBox && (
-                //<div className="modal">
+                //<div className="modal2">
                     <div onClick={showDetailBox} className="overlay">
-                    <div className="modal-content">
-                        <h2>Detail information</h2>
-                        <CateList supplierID={props.supplierID} />
+                    <div className>
+                        <div >
+                            <h2>Detail information</h2>
+                            <CateList supplierID={props.supplierID} />
+                        </div>
                     </div>
                 </div>
             )}

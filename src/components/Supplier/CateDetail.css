@@ -9,8 +9,8 @@ body.active-modal {
     font-size: 18px;
 }
 
-.modal, 
-.overlay {
+.modal2, 
+.overlay2 {
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -20,8 +20,22 @@ body.active-modal {
     position: fixed;
 }
 
+.modal-background{
+    background-color: aqua;
+}
+
 .overlay {
-    background: rgba(49, 49, 49, 0.8);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: rgb(152, 136, 255);
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+    border-radius: 15px;
 }
 .modal-content {
     position: absolute;
