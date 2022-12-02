@@ -18,11 +18,9 @@ function Home() {
                         </div>
                         <div className="content">
                             <div>
-                                <h2>Image Title</h2>
+                                <h2>Silk</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi accusamus
-                                    molestias quidem iusto.
+                                a delicate, soft type of cloth made from a thread produced by silkworms, or the thread itself
                                 </p>
                             </div>
                         </div>
@@ -36,11 +34,9 @@ function Home() {
                         </div>
                         <div className="content">
                             <div>
-                                <h2>Image Title</h2>
+                                <h2>Faux Silk</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi accusamus
-                                    molestias quidem iusto.
+                                made from polyester, giving the material fantastic longevity, durability and fade-resistance after washing
                                 </p>
                             </div>
                         </div>
@@ -54,11 +50,9 @@ function Home() {
                         </div>
                         <div className="content">
                             <div>
-                                <h2>Image Title</h2>
+                                <h2>Damask</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Commodi accusamus
-                                    molestias quidem iusto.
+                                a reversible patterned fabric of silk, wool, linen, cotton or synthetic fibers, with a pattern formed by weaving
                                 </p>
                             </div>
                         </div>

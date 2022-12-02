@@ -13,7 +13,7 @@ function CateDetail(props) {
 
     if (detailBox) {
         document.body.classList.add("active-modal");
-    } else {
+    } else { 
         document.body.classList.remove("active-modal");
     }
 
