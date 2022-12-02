@@ -16,6 +16,10 @@ To start the web application at port 3000
 
 ## Backend
 
+### `Node app.cjs`
+
+To start backend
+
 ### `node index.jsx`
 
 To start backend, you also have to run Xampp which connect to the database.
