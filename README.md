@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `npm install`
 
-To install node_modules if any are missing.
+To install node_modules if any are missing in both the main directory and backend directory
 
 ### `npm start`
 
@@ -19,3 +19,9 @@ To start the web application at port 3000
 ### `node index.jsx`
 
 To start backend, you also have to run Xampp which connect to the database.
+
+### `nodemon index.jsx`
+
+To start database in debug mode.
+
+### start Xampp in both Apache and MySQL
